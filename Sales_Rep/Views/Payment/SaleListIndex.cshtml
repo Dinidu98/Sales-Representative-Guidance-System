@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Sales_Rep.Models.tblCart>
+
+@{
+    ViewBag.Title = "SaleListIndex";
+}
+
+<h2>Sell List</h2>
+@using (Html.BeginForm("SaleListIndex", "Payment"))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                @Html.DropDownList("searchString", (SelectList)ViewBag.InoviceNos, "-Inovice No-",
+                                                 new { @class = "form-control", @required = "required" })
+            </div>
+            <div class="col-6">
+                <input type="submit" value="Search" class="btn btn-info glyphicon-search" />
+            </div>
+        </div>
+    </div>
+
+
+
+}
+<br />
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Invoice No")
+        </th>
+
+        <th>
+            @Html.Label("Sales Rep Name")
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.transno)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.cashier)
+            </td>
+
+            <td>
+                @Html.ActionLink("View", "Details", new { id = item.transno })
+            </td>
+        </tr>
+    }
+
+</table>

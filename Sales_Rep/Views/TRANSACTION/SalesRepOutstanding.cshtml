@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Sales_Rep.Models.Sales_Rep_outstandings>
+
+@{
+    ViewBag.Title = "SalesRepOutstanding";
+}
+
+<h2>Sales Reps Outstanding</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Order")
+        </th>
+        <th>
+            @Html.Label("Sale Total")
+        </th>
+        <th>
+            @Html.Label("Sale Rep Name")
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Row_Num)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Totals)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sales_Rep)
+        </td>
+       
+    </tr>
+}
+
+</table>

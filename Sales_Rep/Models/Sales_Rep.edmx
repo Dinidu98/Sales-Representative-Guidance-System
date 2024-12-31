@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SALES_REPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Confirm_Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Enter_Date" Type="date" Nullable="false" />
+          <Property Name="Enter_User" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Login_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="MDCODE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DESCRIP" Type="varchar" MaxLength="50" />
+          <Property Name="CAT" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PRIOIRTY">
+          <Key>
+            <PropertyRef Name="PR_ID" />
+          </Key>
+          <Property Name="PR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PR_NAME" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="R_Role" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tag" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ROUTE_MAP">
+          <Key>
+            <PropertyRef Name="RM_ID" />
+          </Key>
+          <Property Name="RM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RM_ROUTE_NO" Type="int" />
+          <Property Name="RM_DESTINATION_BEGIN" Type="varchar" MaxLength="50" />
+          <Property Name="RM_DESTINATION_END" Type="varchar" MaxLength="50" />
+          <Property Name="RM_LENGTH" Type="int" />
+          <Property Name="RM_STATUS" Type="int" />
+        </EntityType>
+        <EntityType Name="tblBrand">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Brand" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblCart">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="transno" Type="varchar" MaxLength="50" />
+          <Property Name="pcode" Type="varchar" MaxLength="50" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ourprice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="qty" Type="float" />
+          <Property Name="Linedisc" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="sdate" Type="date" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="cashier" Type="varchar" MaxLength="50" />
+          <Property Name="GrossTotalDiscount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="HiddenOurPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LoyalityPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+          <Property Name="CashAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreditCardAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreditCardInterest" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreditAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PayingAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NetTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LineDiscPer" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LineDiscAmt" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBillDiscPer" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBillDiscAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBillDiscPerAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BillPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SinhalaDesc" Type="nvarchar(max)" />
+          <Property Name="DifferentDisc" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PrintLanguage" Type="varchar" MaxLength="50" />
+          <Property Name="ItemCount" Type="float" />
+          <Property Name="Time" Type="varchar" MaxLength="50" />
+          <Property Name="TotalDiscounts" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Counter" Type="varchar" MaxLength="50" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tblCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar(max)" />
+          <Property Name="Address1" Type="varchar(max)" />
+          <Property Name="Address2" Type="varchar(max)" />
+          <Property Name="Address3" Type="varchar(max)" />
+          <Property Name="Tel1" Type="varchar(max)" />
+          <Property Name="Tel2" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="Fax" Type="varchar(max)" />
+          <Property Name="WebSite" Type="varchar(max)" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="tblContact">
+          <Key>
+            <PropertyRef Name="C_ID" />
+          </Key>
+          <Property Name="C_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="C_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="C_EMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="C_SUBJECT" Type="varchar" MaxLength="50" />
+          <Property Name="C_MESSAGE" Type="varchar(max)" />
+          <Property Name="C_RATE" Type="varchar" MaxLength="50" />
+          <Property Name="C_U_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="C_TYPE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblincrementid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar(max)" Nullable="false" />
+          <Property Name="PAD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NO" Type="int" Nullable="false" />
+          <Property Name="TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblOurCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar(max)" />
+          <Property Name="Address1" Type="varchar(max)" />
+          <Property Name="Address2" Type="varchar(max)" />
+          <Property Name="Address3" Type="varchar(max)" />
+          <Property Name="Tel1" Type="varchar(max)" />
+          <Property Name="Tel2" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="Fax" Type="varchar(max)" />
+          <Property Name="WebSite" Type="varchar(max)" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pcode" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="barcode" Type="varchar" MaxLength="200" />
+          <Property Name="pdesc" Type="varchar(max)" />
+          <Property Name="price" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ourprice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="qty" Type="float" />
+          <Property Name="reorder" Type="float" />
+          <Property Name="LoyalityPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SinhalaDesc" Type="nvarchar(max)" />
+          <Property Name="Brand_Id" Type="int" Nullable="false" />
+          <Property Name="Category_Id" Type="int" />
+          <Property Name="Vendor_Id" Type="int" />
+          <Property Name="Brand_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Company_Id" Type="int" />
+          <Property Name="Priority" Type="int" />
+        </EntityType>
+        <EntityType Name="tblSalesRep">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NIC" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Phone_No" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Email_Password" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tblStockIn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="refno" Type="varchar" MaxLength="250" />
+          <Property Name="pcode" Type="varchar" MaxLength="250" />
+          <Property Name="qty" Type="float" />
+          <Property Name="sdate" Type="datetime" />
+          <Property Name="stockinby" Type="varchar" MaxLength="100" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="vendor" Type="varchar(max)" />
+          <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="Cost" Type="float" />
+          <Property Name="TotalCost" Type="float" />
+          <Property Name="UnitPrice" Type="float" />
+          <Property Name="OurPrice" Type="float" />
+          <Property Name="LoyalityPrice" Type="float" />
+          <Property Name="ExpireDate" Type="date" />
+          <Property Name="GrossTotal" Type="float" />
+          <Property Name="Discounts" Type="float" />
+          <Property Name="NetTotal" Type="float" />
+          <Property Name="ContactPerson" Type="varchar(max)" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="TelephoneNo" Type="varchar" MaxLength="50" />
+          <Property Name="DueDate" Type="date" />
+          <Property Name="PaidAmount" Type="float" />
+          <Property Name="IsFullPayed" Type="bit" />
+          <Property Name="FreeQty" Type="float" />
+        </EntityType>
+        <EntityType Name="tblSupplierPayment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SupplierName" Type="varchar(max)" />
+          <Property Name="ReferenceNo" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentDate" Type="date" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="50" />
+          <Property Name="ChequeNo" Type="varchar" MaxLength="50" />
+          <Property Name="ChequeAmount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="ChequeDate" Type="date" />
+          <Property Name="InvoiceNo" Type="varchar" MaxLength="100" />
+          <Property Name="DueDate" Type="date" />
+          <Property Name="DueAmt" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="InvoiceTotal" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="PayingAmount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="ReturnAmount" Type="decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="tblVendor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vendor" Type="varchar(max)" />
+          <Property Name="address" Type="varchar(max)" />
+          <Property Name="telephone" Type="varchar(max)" />
+          <Property Name="email" Type="varchar(max)" />
+          <Property Name="fax" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tmpcart">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Inv_No" Type="varchar" MaxLength="50" />
+          <Property Name="itm_id" Type="varchar" MaxLength="50" />
+          <Property Name="item" Type="varchar" MaxLength="50" />
+          <Property Name="category" Type="varchar" MaxLength="50" />
+          <Property Name="price" Type="float" />
+          <Property Name="qty" Type="int" />
+          <Property Name="total" Type="float" />
+          <Property Name="subtotal" Type="float" />
+          <Property Name="Discount" Type="int" />
+          <Property Name="vat" Type="float" />
+          <Property Name="Grandtotal" Type="float" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="TRANSACTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SALE_NO" Type="varchar" MaxLength="50" />
+          <Property Name="SALE_REP_ID" Type="int" />
+          <Property Name="ROUTE_ID" Type="int" />
+          <Property Name="STATUS" Type="int" />
+          <Property Name="ATTEND_DATE" Type="date" />
+          <Property Name="DISATTEND_DATE" Type="date" />
+          <Property Name="ENTER_USER" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="Proc_INCREMENT_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TYPE" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="Proc_INCREMENT_ID_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TYPE" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="PROC_INVOICE_LIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="PROC_SALESREP_OUTSTANDINGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SALES_REPModelStoreContainer">
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MDCODE" EntityType="Self.MDCODE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRIOIRTY" EntityType="Self.PRIOIRTY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROUTE_MAP" EntityType="Self.ROUTE_MAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBrand" EntityType="Self.tblBrand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCart" EntityType="Self.tblCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCompany" EntityType="Self.tblCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblContact" EntityType="Self.tblContact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblincrementid" EntityType="Self.tblincrementid" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOurCompany" EntityType="Self.tblOurCompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblProduct" EntityType="Self.tblProduct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalesRep" EntityType="Self.tblSalesRep" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStockIn" EntityType="Self.tblStockIn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSupplierPayment" EntityType="Self.tblSupplierPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVendor" EntityType="Self.tblVendor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tmpcart" EntityType="Self.tmpcart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANSACTION" EntityType="Self.TRANSACTION" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SALES_REPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="R_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblBrand">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tel1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tel2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WebSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblContact">
+          <Key>
+            <PropertyRef Name="C_ID" />
+          </Key>
+          <Property Name="C_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="C_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_SUBJECT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_MESSAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="C_RATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_U_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblincrementid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NO" Type="Int32" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SALES_REPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="tblBrands" EntityType="Self.tblBrand" />
+          <EntitySet Name="tblCategories" EntityType="Self.tblCategory" />
+          <EntitySet Name="tblCompanies" EntityType="Self.tblCompany" />
+          <EntitySet Name="tblContacts" EntityType="Self.tblContact" />
+          <EntitySet Name="tblincrementids" EntityType="Self.tblincrementid" />
+          <EntitySet Name="MDCODEs" EntityType="SALES_REPModel.MDCODE" />
+          <EntitySet Name="tblSupplierPayments" EntityType="SALES_REPModel.tblSupplierPayment" />
+          <EntitySet Name="ROUTE_MAP" EntityType="SALES_REPModel.ROUTE_MAP" />
+          <EntitySet Name="tblStockIns" EntityType="SALES_REPModel.tblStockIn" />
+          <EntitySet Name="tblVendors" EntityType="SALES_REPModel.tblVendor" />
+          <FunctionImport Name="Proc_INCREMENT_ID" ReturnType="Collection(String)">
+          <Parameter Name="TYPE" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Proc_INCREMENT_ID_Update" ReturnType="Collection(String)">
+          <Parameter Name="TYPE" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="TRANSACTIONs" EntityType="SALES_REPModel.TRANSACTION" />
+          <EntitySet Name="tblCarts" EntityType="SALES_REPModel.tblCart" />
+          <EntitySet Name="tmpcarts" EntityType="SALES_REPModel.tmpcart" />
+          <FunctionImport Name="PROC_SALESREP_OUTSTANDINGS" ReturnType="Collection(SALES_REPModel.PROC_SALESREP_OUTSTANDINGS_Result)" />
+          <EntitySet Name="Logins" EntityType="SALES_REPModel.Login" />
+          <EntitySet Name="tblOurCompanies" EntityType="SALES_REPModel.tblOurCompany" />
+          <EntitySet Name="tblSalesReps" EntityType="SALES_REPModel.tblSalesRep" />
+          <FunctionImport Name="PROC_INVOICE_LIST" ReturnType="Collection(String)" />
+          <EntitySet Name="PRIOIRTies" EntityType="SALES_REPModel.PRIOIRTY" />
+          <EntitySet Name="tblProducts" EntityType="SALES_REPModel.tblProduct" />
+        </EntityContainer>
+        <EntityType Name="MDCODE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DESCRIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblSupplierPayment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SupplierName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ReferenceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="0" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ChequeAmount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ChequeDate" Type="DateTime" Precision="0" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DueDate" Type="DateTime" Precision="0" />
+          <Property Name="DueAmt" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PaidAmount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="InvoiceTotal" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="PayingAmount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ReturnAmount" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="ROUTE_MAP">
+          <Key>
+            <PropertyRef Name="RM_ID" />
+          </Key>
+          <Property Name="RM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RM_ROUTE_NO" Type="Int32" />
+          <Property Name="RM_DESTINATION_BEGIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RM_DESTINATION_END" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RM_LENGTH" Type="Int32" />
+          <Property Name="RM_STATUS" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblStockIn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="refno" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="pcode" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="qty" Type="Double" />
+          <Property Name="sdate" Type="DateTime" Precision="3" />
+          <Property Name="stockinby" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vendor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Cost" Type="Double" />
+          <Property Name="TotalCost" Type="Double" />
+          <Property Name="UnitPrice" Type="Double" />
+          <Property Name="OurPrice" Type="Double" />
+          <Property Name="LoyalityPrice" Type="Double" />
+          <Property Name="ExpireDate" Type="DateTime" Precision="0" />
+          <Property Name="GrossTotal" Type="Double" />
+          <Property Name="Discounts" Type="Double" />
+          <Property Name="NetTotal" Type="Double" />
+          <Property Name="ContactPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TelephoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DueDate" Type="DateTime" Precision="0" />
+          <Property Name="PaidAmount" Type="Double" />
+          <Property Name="IsFullPayed" Type="Boolean" />
+          <Property Name="FreeQty" Type="Double" />
+        </EntityType>
+        <EntityType Name="tblVendor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vendor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TRANSACTION">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SALE_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SALE_REP_ID" Type="Int32" />
+          <Property Name="ROUTE_ID" Type="Int32" />
+          <Property Name="STATUS" Type="Int32" />
+          <Property Name="ATTEND_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DISATTEND_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ENTER_USER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCart">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="transno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ourprice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="qty" Type="Double" />
+          <Property Name="Linedisc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="sdate" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cashier" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GrossTotalDiscount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="HiddenOurPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LoyalityPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CashAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreditCardAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreditCardInterest" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreditAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PayingAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NetTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LineDiscPer" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LineDiscAmt" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBillDiscPer" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBillDiscAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBillDiscPerAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BillPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SinhalaDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DifferentDisc" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PrintLanguage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItemCount" Type="Double" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalDiscounts" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Counter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalCost" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tmpcart">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Inv_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="itm_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="item" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Double" />
+          <Property Name="qty" Type="Int32" />
+          <Property Name="total" Type="Double" />
+          <Property Name="subtotal" Type="Double" />
+          <Property Name="Discount" Type="Int32" />
+          <Property Name="vat" Type="Double" />
+          <Property Name="Grandtotal" Type="Double" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="PROC_SALESREP_OUTSTANDINGS_Result">
+          <Property Type="Int64" Name="row_num" Nullable="true" />
+          <Property Type="Decimal" Name="total" Nullable="true" Precision="38" Scale="2" />
+          <Property Type="String" Name="cashier" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Confirm_Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Enter_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Enter_User" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Login_Id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblOurCompany">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Address3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tel1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tel2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WebSite" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tblSalesRep">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NIC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Email_Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PRIOIRTY">
+          <Key>
+            <PropertyRef Name="PR_ID" />
+          </Key>
+          <Property Name="PR_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PR_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblProduct">
+          <Key>
+            <PropertyRef Name="PId" />
+          </Key>
+          <Property Name="PId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pcode" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="barcode" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="pdesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ourprice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="qty" Type="Double" />
+          <Property Name="reorder" Type="Double" />
+          <Property Name="LoyalityPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cost" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SinhalaDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brand_Id" Type="Int32" Nullable="false" />
+          <Property Name="Category_Id" Type="Int32" />
+          <Property Name="Vendor_Id" Type="Int32" />
+          <Property Name="Brand_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Id" Type="Int32" />
+          <Property Name="Priority" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SALES_REPModelStoreContainer" CdmEntityContainer="SALES_REPEntities">
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="SALES_REPModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="R_Role" ColumnName="R_Role" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBrands">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblBrand">
+              <MappingFragment StoreEntitySet="tblBrand">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCategories">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblCategory">
+              <MappingFragment StoreEntitySet="tblCategory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCompanies">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblCompany">
+              <MappingFragment StoreEntitySet="tblCompany">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+                <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContacts">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblContact">
+              <MappingFragment StoreEntitySet="tblContact">
+                <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+                <ScalarProperty Name="C_NAME" ColumnName="C_NAME" />
+                <ScalarProperty Name="C_EMAIL" ColumnName="C_EMAIL" />
+                <ScalarProperty Name="C_SUBJECT" ColumnName="C_SUBJECT" />
+                <ScalarProperty Name="C_MESSAGE" ColumnName="C_MESSAGE" />
+                <ScalarProperty Name="C_RATE" ColumnName="C_RATE" />
+                <ScalarProperty Name="C_U_NAME" ColumnName="C_U_NAME" />
+                <ScalarProperty Name="C_TYPE" ColumnName="C_TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblincrementids">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblincrementid">
+              <MappingFragment StoreEntitySet="tblincrementid">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PAD" ColumnName="PAD" />
+                <ScalarProperty Name="NO" ColumnName="NO" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MDCODEs">
+            <EntityTypeMapping TypeName="SALES_REPModel.MDCODE">
+              <MappingFragment StoreEntitySet="MDCODE">
+                <ScalarProperty Name="CAT" ColumnName="CAT" />
+                <ScalarProperty Name="DESCRIP" ColumnName="DESCRIP" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSupplierPayments">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblSupplierPayment">
+              <MappingFragment StoreEntitySet="tblSupplierPayment">
+                <ScalarProperty Name="ReturnAmount" ColumnName="ReturnAmount" />
+                <ScalarProperty Name="PayingAmount" ColumnName="PayingAmount" />
+                <ScalarProperty Name="InvoiceTotal" ColumnName="InvoiceTotal" />
+                <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DueAmt" ColumnName="DueAmt" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+                <ScalarProperty Name="ChequeAmount" ColumnName="ChequeAmount" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROUTE_MAP">
+            <EntityTypeMapping TypeName="SALES_REPModel.ROUTE_MAP">
+              <MappingFragment StoreEntitySet="ROUTE_MAP">
+                <ScalarProperty Name="RM_STATUS" ColumnName="RM_STATUS" />
+                <ScalarProperty Name="RM_LENGTH" ColumnName="RM_LENGTH" />
+                <ScalarProperty Name="RM_DESTINATION_END" ColumnName="RM_DESTINATION_END" />
+                <ScalarProperty Name="RM_DESTINATION_BEGIN" ColumnName="RM_DESTINATION_BEGIN" />
+                <ScalarProperty Name="RM_ROUTE_NO" ColumnName="RM_ROUTE_NO" />
+                <ScalarProperty Name="RM_ID" ColumnName="RM_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStockIns">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblStockIn">
+              <MappingFragment StoreEntitySet="tblStockIn">
+                <ScalarProperty Name="FreeQty" ColumnName="FreeQty" />
+                <ScalarProperty Name="IsFullPayed" ColumnName="IsFullPayed" />
+                <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="NetTotal" ColumnName="NetTotal" />
+                <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+                <ScalarProperty Name="GrossTotal" ColumnName="GrossTotal" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="LoyalityPrice" ColumnName="LoyalityPrice" />
+                <ScalarProperty Name="OurPrice" ColumnName="OurPrice" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="vendor" ColumnName="vendor" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="stockinby" ColumnName="stockinby" />
+                <ScalarProperty Name="sdate" ColumnName="sdate" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="pcode" ColumnName="pcode" />
+                <ScalarProperty Name="refno" ColumnName="refno" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVendors">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblVendor">
+              <MappingFragment StoreEntitySet="tblVendor">
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="vendor" ColumnName="vendor" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Proc_INCREMENT_ID" FunctionName="SALES_REPModel.Store.Proc_INCREMENT_ID" />
+          <FunctionImportMapping FunctionImportName="Proc_INCREMENT_ID_Update" FunctionName="SALES_REPModel.Store.Proc_INCREMENT_ID_Update" />
+          <EntitySetMapping Name="TRANSACTIONs">
+            <EntityTypeMapping TypeName="SALES_REPModel.TRANSACTION">
+              <MappingFragment StoreEntitySet="TRANSACTION">
+                <ScalarProperty Name="ENTER_USER" ColumnName="ENTER_USER" />
+                <ScalarProperty Name="DISATTEND_DATE" ColumnName="DISATTEND_DATE" />
+                <ScalarProperty Name="ATTEND_DATE" ColumnName="ATTEND_DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+                <ScalarProperty Name="SALE_REP_ID" ColumnName="SALE_REP_ID" />
+                <ScalarProperty Name="SALE_NO" ColumnName="SALE_NO" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCarts">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblCart">
+              <MappingFragment StoreEntitySet="tblCart">
+                <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Counter" ColumnName="Counter" />
+                <ScalarProperty Name="TotalDiscounts" ColumnName="TotalDiscounts" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="ItemCount" ColumnName="ItemCount" />
+                <ScalarProperty Name="PrintLanguage" ColumnName="PrintLanguage" />
+                <ScalarProperty Name="DifferentDisc" ColumnName="DifferentDisc" />
+                <ScalarProperty Name="SinhalaDesc" ColumnName="SinhalaDesc" />
+                <ScalarProperty Name="BillPrice" ColumnName="BillPrice" />
+                <ScalarProperty Name="TotalBillDiscPerAmount" ColumnName="TotalBillDiscPerAmount" />
+                <ScalarProperty Name="TotalBillDiscAmount" ColumnName="TotalBillDiscAmount" />
+                <ScalarProperty Name="TotalBillDiscPer" ColumnName="TotalBillDiscPer" />
+                <ScalarProperty Name="LineDiscAmt" ColumnName="LineDiscAmt" />
+                <ScalarProperty Name="LineDiscPer" ColumnName="LineDiscPer" />
+                <ScalarProperty Name="NetTotal" ColumnName="NetTotal" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="PayingAmount" ColumnName="PayingAmount" />
+                <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+                <ScalarProperty Name="CreditCardInterest" ColumnName="CreditCardInterest" />
+                <ScalarProperty Name="CreditCardAmount" ColumnName="CreditCardAmount" />
+                <ScalarProperty Name="CashAmount" ColumnName="CashAmount" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="LoyalityPrice" ColumnName="LoyalityPrice" />
+                <ScalarProperty Name="HiddenOurPrice" ColumnName="HiddenOurPrice" />
+                <ScalarProperty Name="GrossTotalDiscount" ColumnName="GrossTotalDiscount" />
+                <ScalarProperty Name="cashier" ColumnName="cashier" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="sdate" ColumnName="sdate" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="Linedisc" ColumnName="Linedisc" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="ourprice" ColumnName="ourprice" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="pcode" ColumnName="pcode" />
+                <ScalarProperty Name="transno" ColumnName="transno" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tmpcarts">
+            <EntityTypeMapping TypeName="SALES_REPModel.tmpcart">
+              <MappingFragment StoreEntitySet="tmpcart">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Grandtotal" ColumnName="Grandtotal" />
+                <ScalarProperty Name="vat" ColumnName="vat" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="item" ColumnName="item" />
+                <ScalarProperty Name="itm_id" ColumnName="itm_id" />
+                <ScalarProperty Name="Inv_No" ColumnName="Inv_No" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PROC_SALESREP_OUTSTANDINGS" FunctionName="SALES_REPModel.Store.PROC_SALESREP_OUTSTANDINGS">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SALES_REPModel.PROC_SALESREP_OUTSTANDINGS_Result">
+                <ScalarProperty Name="row_num" ColumnName="row_num" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="cashier" ColumnName="cashier" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="SALES_REPModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+                <ScalarProperty Name="Enter_User" ColumnName="Enter_User" />
+                <ScalarProperty Name="Enter_Date" ColumnName="Enter_Date" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Confirm_Password" ColumnName="Confirm_Password" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOurCompanies">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblOurCompany">
+              <MappingFragment StoreEntitySet="tblOurCompany">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+                <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalesReps">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblSalesRep">
+              <MappingFragment StoreEntitySet="tblSalesRep">
+                <ScalarProperty Name="Email_Password" ColumnName="Email_Password" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PROC_INVOICE_LIST" FunctionName="SALES_REPModel.Store.PROC_INVOICE_LIST" />
+          <EntitySetMapping Name="PRIOIRTies">
+            <EntityTypeMapping TypeName="SALES_REPModel.PRIOIRTY">
+              <MappingFragment StoreEntitySet="PRIOIRTY">
+                <ScalarProperty Name="PR_NAME" ColumnName="PR_NAME" />
+                <ScalarProperty Name="PR_ID" ColumnName="PR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblProducts">
+            <EntityTypeMapping TypeName="SALES_REPModel.tblProduct">
+              <MappingFragment StoreEntitySet="tblProduct">
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+                <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
+                <ScalarProperty Name="Vendor_Id" ColumnName="Vendor_Id" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Brand_Id" ColumnName="Brand_Id" />
+                <ScalarProperty Name="SinhalaDesc" ColumnName="SinhalaDesc" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="LoyalityPrice" ColumnName="LoyalityPrice" />
+                <ScalarProperty Name="reorder" ColumnName="reorder" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="ourprice" ColumnName="ourprice" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="pdesc" ColumnName="pdesc" />
+                <ScalarProperty Name="barcode" ColumnName="barcode" />
+                <ScalarProperty Name="pcode" ColumnName="pcode" />
+                <ScalarProperty Name="PId" ColumnName="PId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

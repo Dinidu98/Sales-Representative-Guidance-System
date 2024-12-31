@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Sales_Rep.Models.tblProduct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.Label("Code")
+        </th>
+
+        <th>
+            @Html.Label("Name")
+        </th>
+        <th>
+            @Html.Label("Price")
+        </th>
+        <th>
+            @Html.Label("Our Price")
+        </th>
+        @*<th>
+            @Html.Label("Qty")
+        </th>*@
+
+        <th>
+            @Html.Label("Loyality Price")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.Label("Re Order")
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.pcode)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.pdesc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ourprice)
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.qty)
+    </td>*@
+
+    <td>
+        @Html.DisplayFor(modelItem => item.LoyalityPrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cost)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.reorder)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new {  id=item.PId  }) |
+    
+        @Html.ActionLink("Delete", "Delete", new {  id=item.PId })
+    </td>
+</tr>
+}
+
+</table>

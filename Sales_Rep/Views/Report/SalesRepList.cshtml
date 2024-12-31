@@ -1,0 +1,49 @@
+﻿@model Sales_Rep.Models.tblProduct
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <h2>Sales Reps List Report</h2>
+    <br />
+    <br />
+    <div class="row">
+
+
+        <div class="col-md-3">
+            <div class="col-md-offset-10 col-md-10">
+                <input type="button" id="btnSearch" value="Load" class="btn btn-primary btn-user btn-block" onclick="reportLoad();" />
+            </div>
+        </div>
+
+
+    </div>
+    <br />
+
+
+    <div class="row"></div>
+    <div class="row">
+
+
+
+
+    </div>
+</div>
+
+<div class="row" id="divReport">
+</div>
+<script>
+        function reportLoad() {
+
+            var id = 3;
+
+
+            window.open('/Reports/Report.aspx?id='
+                + id , '_blank');
+
+        }
+
+
+
+</script>

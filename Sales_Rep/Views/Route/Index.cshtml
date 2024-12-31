@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Sales_Rep.Models.ROUTE_MAP>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.Label("Route No")
+        </th>
+        <th>
+            @Html.Label("Destination Begin")
+        </th>
+        <th>
+            @Html.Label("Destination End")
+        </th>
+        <th>
+            @Html.Label("Destination Length")
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.RM_ROUTE_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RM_DESTINATION_BEGIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RM_DESTINATION_END)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RM_LENGTH)
+        </td>
+      
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.RM_ID  }) |
+           
+            @Html.ActionLink("Delete", "Delete", new {  id=item.RM_ID })
+        </td>
+    </tr>
+}
+
+</table>

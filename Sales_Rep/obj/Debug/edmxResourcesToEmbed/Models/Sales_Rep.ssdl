@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SALES_REPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Confirm_Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Enter_Date" Type="date" Nullable="false" />
+    <Property Name="Enter_User" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="MDCODE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DESCRIP" Type="varchar" MaxLength="50" />
+    <Property Name="CAT" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PRIOIRTY">
+    <Key>
+      <PropertyRef Name="PR_ID" />
+    </Key>
+    <Property Name="PR_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PR_NAME" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="R_Role" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tag" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ROUTE_MAP">
+    <Key>
+      <PropertyRef Name="RM_ID" />
+    </Key>
+    <Property Name="RM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RM_ROUTE_NO" Type="int" />
+    <Property Name="RM_DESTINATION_BEGIN" Type="varchar" MaxLength="50" />
+    <Property Name="RM_DESTINATION_END" Type="varchar" MaxLength="50" />
+    <Property Name="RM_LENGTH" Type="int" />
+    <Property Name="RM_STATUS" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBrand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblCart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transno" Type="varchar" MaxLength="50" />
+    <Property Name="pcode" Type="varchar" MaxLength="50" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ourprice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="qty" Type="float" />
+    <Property Name="Linedisc" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="sdate" Type="date" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="cashier" Type="varchar" MaxLength="50" />
+    <Property Name="GrossTotalDiscount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="HiddenOurPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LoyalityPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+    <Property Name="CashAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreditCardAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreditCardInterest" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CreditAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PayingAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="NetTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LineDiscPer" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LineDiscAmt" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalBillDiscPer" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalBillDiscAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalBillDiscPerAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BillPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SinhalaDesc" Type="nvarchar(max)" />
+    <Property Name="DifferentDisc" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PrintLanguage" Type="varchar" MaxLength="50" />
+    <Property Name="ItemCount" Type="float" />
+    <Property Name="Time" Type="varchar" MaxLength="50" />
+    <Property Name="TotalDiscounts" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Counter" Type="varchar" MaxLength="50" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalCost" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar(max)" />
+    <Property Name="Address1" Type="varchar(max)" />
+    <Property Name="Address2" Type="varchar(max)" />
+    <Property Name="Address3" Type="varchar(max)" />
+    <Property Name="Tel1" Type="varchar(max)" />
+    <Property Name="Tel2" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Fax" Type="varchar(max)" />
+    <Property Name="WebSite" Type="varchar(max)" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="tblContact">
+    <Key>
+      <PropertyRef Name="C_ID" />
+    </Key>
+    <Property Name="C_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="C_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="C_EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="C_SUBJECT" Type="varchar" MaxLength="50" />
+    <Property Name="C_MESSAGE" Type="varchar(max)" />
+    <Property Name="C_RATE" Type="varchar" MaxLength="50" />
+    <Property Name="C_U_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="C_TYPE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblincrementid">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="varchar(max)" Nullable="false" />
+    <Property Name="PAD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NO" Type="int" Nullable="false" />
+    <Property Name="TYPE" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblOurCompany">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar(max)" />
+    <Property Name="Address1" Type="varchar(max)" />
+    <Property Name="Address2" Type="varchar(max)" />
+    <Property Name="Address3" Type="varchar(max)" />
+    <Property Name="Tel1" Type="varchar(max)" />
+    <Property Name="Tel2" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Fax" Type="varchar(max)" />
+    <Property Name="WebSite" Type="varchar(max)" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="tblProduct">
+    <Key>
+      <PropertyRef Name="PId" />
+    </Key>
+    <Property Name="PId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pcode" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="barcode" Type="varchar" MaxLength="200" />
+    <Property Name="pdesc" Type="varchar(max)" />
+    <Property Name="price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ourprice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="qty" Type="float" />
+    <Property Name="reorder" Type="float" />
+    <Property Name="LoyalityPrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Cost" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SinhalaDesc" Type="nvarchar(max)" />
+    <Property Name="Brand_Id" Type="int" Nullable="false" />
+    <Property Name="Category_Id" Type="int" />
+    <Property Name="Vendor_Id" Type="int" />
+    <Property Name="Brand_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Company_Id" Type="int" />
+    <Property Name="Priority" Type="int" />
+  </EntityType>
+  <EntityType Name="tblSalesRep">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NIC" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Phone_No" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Email_Password" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tblStockIn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="refno" Type="varchar" MaxLength="250" />
+    <Property Name="pcode" Type="varchar" MaxLength="250" />
+    <Property Name="qty" Type="float" />
+    <Property Name="sdate" Type="datetime" />
+    <Property Name="stockinby" Type="varchar" MaxLength="100" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="vendor" Type="varchar(max)" />
+    <Property Name="InvoiceNo" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Cost" Type="float" />
+    <Property Name="TotalCost" Type="float" />
+    <Property Name="UnitPrice" Type="float" />
+    <Property Name="OurPrice" Type="float" />
+    <Property Name="LoyalityPrice" Type="float" />
+    <Property Name="ExpireDate" Type="date" />
+    <Property Name="GrossTotal" Type="float" />
+    <Property Name="Discounts" Type="float" />
+    <Property Name="NetTotal" Type="float" />
+    <Property Name="ContactPerson" Type="varchar(max)" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="TelephoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="DueDate" Type="date" />
+    <Property Name="PaidAmount" Type="float" />
+    <Property Name="IsFullPayed" Type="bit" />
+    <Property Name="FreeQty" Type="float" />
+  </EntityType>
+  <EntityType Name="tblSupplierPayment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SupplierName" Type="varchar(max)" />
+    <Property Name="ReferenceNo" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentMethod" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="date" />
+    <Property Name="Account" Type="varchar" MaxLength="50" />
+    <Property Name="AccountNo" Type="varchar" MaxLength="50" />
+    <Property Name="ChequeNo" Type="varchar" MaxLength="50" />
+    <Property Name="ChequeAmount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ChequeDate" Type="date" />
+    <Property Name="InvoiceNo" Type="varchar" MaxLength="100" />
+    <Property Name="DueDate" Type="date" />
+    <Property Name="DueAmt" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="PaidAmount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="InvoiceTotal" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PayingAmount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ReturnAmount" Type="decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="tblVendor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="vendor" Type="varchar(max)" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="telephone" Type="varchar(max)" />
+    <Property Name="email" Type="varchar(max)" />
+    <Property Name="fax" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tmpcart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Inv_No" Type="varchar" MaxLength="50" />
+    <Property Name="itm_id" Type="varchar" MaxLength="50" />
+    <Property Name="item" Type="varchar" MaxLength="50" />
+    <Property Name="category" Type="varchar" MaxLength="50" />
+    <Property Name="price" Type="float" />
+    <Property Name="qty" Type="int" />
+    <Property Name="total" Type="float" />
+    <Property Name="subtotal" Type="float" />
+    <Property Name="Discount" Type="int" />
+    <Property Name="vat" Type="float" />
+    <Property Name="Grandtotal" Type="float" />
+    <Property Name="status" Type="int" />
+  </EntityType>
+  <EntityType Name="TRANSACTION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SALE_NO" Type="varchar" MaxLength="50" />
+    <Property Name="SALE_REP_ID" Type="int" />
+    <Property Name="ROUTE_ID" Type="int" />
+    <Property Name="STATUS" Type="int" />
+    <Property Name="ATTEND_DATE" Type="date" />
+    <Property Name="DISATTEND_DATE" Type="date" />
+    <Property Name="ENTER_USER" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="Proc_INCREMENT_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TYPE" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Proc_INCREMENT_ID_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TYPE" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="PROC_INVOICE_LIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="PROC_SALESREP_OUTSTANDINGS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="SALES_REPModelStoreContainer">
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MDCODE" EntityType="Self.MDCODE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRIOIRTY" EntityType="Self.PRIOIRTY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROUTE_MAP" EntityType="Self.ROUTE_MAP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBrand" EntityType="Self.tblBrand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCart" EntityType="Self.tblCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCategory" EntityType="Self.tblCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCompany" EntityType="Self.tblCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblContact" EntityType="Self.tblContact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblincrementid" EntityType="Self.tblincrementid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblOurCompany" EntityType="Self.tblOurCompany" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblProduct" EntityType="Self.tblProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSalesRep" EntityType="Self.tblSalesRep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStockIn" EntityType="Self.tblStockIn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSupplierPayment" EntityType="Self.tblSupplierPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblVendor" EntityType="Self.tblVendor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpcart" EntityType="Self.tmpcart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANSACTION" EntityType="Self.TRANSACTION" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

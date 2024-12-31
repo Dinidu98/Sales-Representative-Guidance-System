@@ -1,0 +1,254 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Asst/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="~/Asst/assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+ 
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="~/Asst/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Asst/assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="~/Asst/assets/css/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="sidebar" data-image="~/Asst/assets/img/sidebar-5.jpg">
+            
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a href="/Home/Index" class="simple-text">
+                        <h1>Sales Rep Guidance System</h1>  
+                    </a>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Home/Index">
+                            <i class="nc-icon nc-chart-pie-35"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    @*<li>
+            <a class="nav-link" href="./user.html">
+                <i class="nc-icon nc-circle-09"></i>
+                <p>User Profile</p>
+            </a>
+        </li>*@
+
+                    --Inventory--
+                    <br />
+                    @if (Session["Role"].ToString() == "1")
+                    {
+                        <li>
+                            <a class="nav-link" href="/Brands/Index">
+                                <i class="nc-icon nc-notes"></i>
+                                <p>Brands</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Category/Index">
+                                <i class="nc-icon nc-paper-2"></i>
+                                <p>Category</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Products/Index">
+                                <i class="nc-icon nc-pin-3"></i>
+                                <p>Products</p>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/GRN/Create">
+                                <i class="nc-icon nc-paper-2"></i>
+                                <p>Goods Received Note</p>
+                            </a>
+                        </li>
+                    }
+                    --Sales Rep & Others--
+                    <br />
+                    @if (Session["Role"].ToString() == "1")
+                    {
+                        <li>
+                            <a class="nav-link" href="/SalesRep/Index">
+                                <i class="nc-icon nc-bell-55"></i>
+                                <p>Sales Reps</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Route/Index">
+                                <i class="nc-icon nc-alien-33"></i>
+                                <p>Routes</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Company/Index">
+                                <i class="nc-icon nc-atom"></i>
+                                <p>Company</p>
+                            </a>
+                        </li>
+                    }
+
+                    --Vendors--
+                    @if (Session["Role"].ToString() == "1")
+                    {
+                        <li>
+                            <a class="nav-link" href="/Vendor/Index">
+                                <i class="nc-icon nc-apple"></i>
+                                <p>Vendors</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Supplier/Index">
+                                <i class="nc-bank nc-icon"></i>
+                                <p>Supplier Payments</p>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="/TRANSACTION/Create">
+                                <i class="nc-badge nc-icon"></i>
+                                <p>Rep Transaction</p>
+                            </a>
+                        </li>
+                    }
+                    <br />
+                    --Invoice--
+                    <li>
+                        <a class="nav-link" href="/Payment/Index">
+                            <i class="nc-bullet-list-67 nc-icon"></i>
+                            <p>Invoice</p>
+                        </a>
+                    </li>
+                    --Others--
+                    <li>
+                        <a class="nav-link" href="/TRANSACTION/SalesRepOutstanding">
+                            <i class="nc-notes nc-icon"></i>
+                            <p>Rank</p>
+                        </a>
+                    </li>
+                    @if (Session["Role"].ToString() == "1")
+                    {
+                        <li>
+                            <a class="nav-link" href="/Payment/SaleListIndex">
+                                <i class="nc-send nc-icon"></i>
+                                <p>Sale List</p>
+                            </a>
+                        </li>
+                    }
+                    --Reports
+                    @if (Session["Role"].ToString() == "1")
+                    {
+                        <li>
+                            <a class="nav-link" href="/Report/Index">
+                                <i class="nc-notes nc-icon"></i>
+                                <p>Re Order Report</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Report/DailySale">
+                                <i class="nc-notes nc-icon"></i>
+                                <p>Daily Sale Report</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="/Report/SalesRepList">
+                                <i class="nc-notes nc-icon"></i>
+                                <p>Sale Rep List </p>
+                            </a>
+                        </li>
+                    }
+                    </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#pablo"> Dashboard </a>
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        
+                        
+                    </div>
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <div class="content">
+                @RenderBody()
+                <div class="container-fluid">
+                    <div class="row">
+                        
+                        <div class="col-md-8">
+                            
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                           
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                  
+                </div>
+            </footer>
+        </div>
+    </div>
+   
+</body>
+<!--   Core JS Files   -->
+<script src="~/Asst/assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="~/Asst/assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="~/Asst/assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="~/Asst/assets/js/plugins/bootstrap-switch.js"></script>
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!--  Chartist Plugin  -->
+<script src="~/Asst/assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="~/Asst/assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src="~/Asst/assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+<script src="~/Asst/assets/js/demo.js"></script>
+<script type="text/javascript">
+
+    //$(document).ready(function () {
+    //    // Javascript method's body can be found in assets/js/demos.js
+    //    demo.initDashboardPageCharts();
+
+    //    demo.showNotification();
+
+    //});
+
+</script>
+
+</html>
+
+
+
+
+
+
+    

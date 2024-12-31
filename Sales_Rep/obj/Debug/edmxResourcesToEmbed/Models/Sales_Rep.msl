@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SALES_REPModelStoreContainer" CdmEntityContainer="SALES_REPEntities">
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="SALES_REPModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="R_Role" ColumnName="R_Role" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBrands">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblBrand">
+        <MappingFragment StoreEntitySet="tblBrand">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCategories">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblCategory">
+        <MappingFragment StoreEntitySet="tblCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCompanies">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblCompany">
+        <MappingFragment StoreEntitySet="tblCompany">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblContacts">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblContact">
+        <MappingFragment StoreEntitySet="tblContact">
+          <ScalarProperty Name="C_ID" ColumnName="C_ID" />
+          <ScalarProperty Name="C_NAME" ColumnName="C_NAME" />
+          <ScalarProperty Name="C_EMAIL" ColumnName="C_EMAIL" />
+          <ScalarProperty Name="C_SUBJECT" ColumnName="C_SUBJECT" />
+          <ScalarProperty Name="C_MESSAGE" ColumnName="C_MESSAGE" />
+          <ScalarProperty Name="C_RATE" ColumnName="C_RATE" />
+          <ScalarProperty Name="C_U_NAME" ColumnName="C_U_NAME" />
+          <ScalarProperty Name="C_TYPE" ColumnName="C_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblincrementids">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblincrementid">
+        <MappingFragment StoreEntitySet="tblincrementid">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PAD" ColumnName="PAD" />
+          <ScalarProperty Name="NO" ColumnName="NO" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MDCODEs">
+      <EntityTypeMapping TypeName="SALES_REPModel.MDCODE">
+        <MappingFragment StoreEntitySet="MDCODE">
+          <ScalarProperty Name="CAT" ColumnName="CAT" />
+          <ScalarProperty Name="DESCRIP" ColumnName="DESCRIP" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSupplierPayments">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblSupplierPayment">
+        <MappingFragment StoreEntitySet="tblSupplierPayment">
+          <ScalarProperty Name="ReturnAmount" ColumnName="ReturnAmount" />
+          <ScalarProperty Name="PayingAmount" ColumnName="PayingAmount" />
+          <ScalarProperty Name="InvoiceTotal" ColumnName="InvoiceTotal" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DueAmt" ColumnName="DueAmt" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="ChequeDate" ColumnName="ChequeDate" />
+          <ScalarProperty Name="ChequeAmount" ColumnName="ChequeAmount" />
+          <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROUTE_MAP">
+      <EntityTypeMapping TypeName="SALES_REPModel.ROUTE_MAP">
+        <MappingFragment StoreEntitySet="ROUTE_MAP">
+          <ScalarProperty Name="RM_STATUS" ColumnName="RM_STATUS" />
+          <ScalarProperty Name="RM_LENGTH" ColumnName="RM_LENGTH" />
+          <ScalarProperty Name="RM_DESTINATION_END" ColumnName="RM_DESTINATION_END" />
+          <ScalarProperty Name="RM_DESTINATION_BEGIN" ColumnName="RM_DESTINATION_BEGIN" />
+          <ScalarProperty Name="RM_ROUTE_NO" ColumnName="RM_ROUTE_NO" />
+          <ScalarProperty Name="RM_ID" ColumnName="RM_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStockIns">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblStockIn">
+        <MappingFragment StoreEntitySet="tblStockIn">
+          <ScalarProperty Name="FreeQty" ColumnName="FreeQty" />
+          <ScalarProperty Name="IsFullPayed" ColumnName="IsFullPayed" />
+          <ScalarProperty Name="PaidAmount" ColumnName="PaidAmount" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="TelephoneNo" ColumnName="TelephoneNo" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="NetTotal" ColumnName="NetTotal" />
+          <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+          <ScalarProperty Name="GrossTotal" ColumnName="GrossTotal" />
+          <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+          <ScalarProperty Name="LoyalityPrice" ColumnName="LoyalityPrice" />
+          <ScalarProperty Name="OurPrice" ColumnName="OurPrice" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="vendor" ColumnName="vendor" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="stockinby" ColumnName="stockinby" />
+          <ScalarProperty Name="sdate" ColumnName="sdate" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="pcode" ColumnName="pcode" />
+          <ScalarProperty Name="refno" ColumnName="refno" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblVendors">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblVendor">
+        <MappingFragment StoreEntitySet="tblVendor">
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="vendor" ColumnName="vendor" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Proc_INCREMENT_ID" FunctionName="SALES_REPModel.Store.Proc_INCREMENT_ID" />
+    <FunctionImportMapping FunctionImportName="Proc_INCREMENT_ID_Update" FunctionName="SALES_REPModel.Store.Proc_INCREMENT_ID_Update" />
+    <EntitySetMapping Name="TRANSACTIONs">
+      <EntityTypeMapping TypeName="SALES_REPModel.TRANSACTION">
+        <MappingFragment StoreEntitySet="TRANSACTION">
+          <ScalarProperty Name="ENTER_USER" ColumnName="ENTER_USER" />
+          <ScalarProperty Name="DISATTEND_DATE" ColumnName="DISATTEND_DATE" />
+          <ScalarProperty Name="ATTEND_DATE" ColumnName="ATTEND_DATE" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ROUTE_ID" ColumnName="ROUTE_ID" />
+          <ScalarProperty Name="SALE_REP_ID" ColumnName="SALE_REP_ID" />
+          <ScalarProperty Name="SALE_NO" ColumnName="SALE_NO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCarts">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblCart">
+        <MappingFragment StoreEntitySet="tblCart">
+          <ScalarProperty Name="TotalCost" ColumnName="TotalCost" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Counter" ColumnName="Counter" />
+          <ScalarProperty Name="TotalDiscounts" ColumnName="TotalDiscounts" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="ItemCount" ColumnName="ItemCount" />
+          <ScalarProperty Name="PrintLanguage" ColumnName="PrintLanguage" />
+          <ScalarProperty Name="DifferentDisc" ColumnName="DifferentDisc" />
+          <ScalarProperty Name="SinhalaDesc" ColumnName="SinhalaDesc" />
+          <ScalarProperty Name="BillPrice" ColumnName="BillPrice" />
+          <ScalarProperty Name="TotalBillDiscPerAmount" ColumnName="TotalBillDiscPerAmount" />
+          <ScalarProperty Name="TotalBillDiscAmount" ColumnName="TotalBillDiscAmount" />
+          <ScalarProperty Name="TotalBillDiscPer" ColumnName="TotalBillDiscPer" />
+          <ScalarProperty Name="LineDiscAmt" ColumnName="LineDiscAmt" />
+          <ScalarProperty Name="LineDiscPer" ColumnName="LineDiscPer" />
+          <ScalarProperty Name="NetTotal" ColumnName="NetTotal" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="PayingAmount" ColumnName="PayingAmount" />
+          <ScalarProperty Name="CreditAmount" ColumnName="CreditAmount" />
+          <ScalarProperty Name="CreditCardInterest" ColumnName="CreditCardInterest" />
+          <ScalarProperty Name="CreditCardAmount" ColumnName="CreditCardAmount" />
+          <ScalarProperty Name="CashAmount" ColumnName="CashAmount" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="LoyalityPrice" ColumnName="LoyalityPrice" />
+          <ScalarProperty Name="HiddenOurPrice" ColumnName="HiddenOurPrice" />
+          <ScalarProperty Name="GrossTotalDiscount" ColumnName="GrossTotalDiscount" />
+          <ScalarProperty Name="cashier" ColumnName="cashier" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sdate" ColumnName="sdate" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="Linedisc" ColumnName="Linedisc" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="ourprice" ColumnName="ourprice" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="pcode" ColumnName="pcode" />
+          <ScalarProperty Name="transno" ColumnName="transno" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpcarts">
+      <EntityTypeMapping TypeName="SALES_REPModel.tmpcart">
+        <MappingFragment StoreEntitySet="tmpcart">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Grandtotal" ColumnName="Grandtotal" />
+          <ScalarProperty Name="vat" ColumnName="vat" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="itm_id" ColumnName="itm_id" />
+          <ScalarProperty Name="Inv_No" ColumnName="Inv_No" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PROC_SALESREP_OUTSTANDINGS" FunctionName="SALES_REPModel.Store.PROC_SALESREP_OUTSTANDINGS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SALES_REPModel.PROC_SALESREP_OUTSTANDINGS_Result">
+          <ScalarProperty Name="row_num" ColumnName="row_num" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="cashier" ColumnName="cashier" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="SALES_REPModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Login_Id" ColumnName="Login_Id" />
+          <ScalarProperty Name="Enter_User" ColumnName="Enter_User" />
+          <ScalarProperty Name="Enter_Date" ColumnName="Enter_Date" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Confirm_Password" ColumnName="Confirm_Password" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOurCompanies">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblOurCompany">
+        <MappingFragment StoreEntitySet="tblOurCompany">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="WebSite" ColumnName="WebSite" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSalesReps">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblSalesRep">
+        <MappingFragment StoreEntitySet="tblSalesRep">
+          <ScalarProperty Name="Email_Password" ColumnName="Email_Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PROC_INVOICE_LIST" FunctionName="SALES_REPModel.Store.PROC_INVOICE_LIST" />
+    <EntitySetMapping Name="PRIOIRTies">
+      <EntityTypeMapping TypeName="SALES_REPModel.PRIOIRTY">
+        <MappingFragment StoreEntitySet="PRIOIRTY">
+          <ScalarProperty Name="PR_NAME" ColumnName="PR_NAME" />
+          <ScalarProperty Name="PR_ID" ColumnName="PR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProducts">
+      <EntityTypeMapping TypeName="SALES_REPModel.tblProduct">
+        <MappingFragment StoreEntitySet="tblProduct">
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Company_Id" ColumnName="Company_Id" />
+          <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
+          <ScalarProperty Name="Vendor_Id" ColumnName="Vendor_Id" />
+          <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+          <ScalarProperty Name="Brand_Id" ColumnName="Brand_Id" />
+          <ScalarProperty Name="SinhalaDesc" ColumnName="SinhalaDesc" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="LoyalityPrice" ColumnName="LoyalityPrice" />
+          <ScalarProperty Name="reorder" ColumnName="reorder" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="ourprice" ColumnName="ourprice" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="pdesc" ColumnName="pdesc" />
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+          <ScalarProperty Name="pcode" ColumnName="pcode" />
+          <ScalarProperty Name="PId" ColumnName="PId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

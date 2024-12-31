@@ -1,0 +1,51 @@
+﻿@model Sales_Rep.Models.TRANSACTION
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SALE REP TRANSACTION</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+       
+
+    <div class="form-group">
+        @Html.Label("Sale Rep")
+        <div class="col-md-10">
+            @Html.DropDownList("SALE_REP_ID", (SelectList)ViewBag.REP, "-SALE REP-",
+                                                  new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(model => model.SALE_REP_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Route")
+        <div class="col-md-10">
+            @Html.DropDownList("ROUTE_ID", (SelectList)ViewBag.ROUTE, "-ROUTE-",
+                                               new { @class = "form-control", @required = "required" })
+            @Html.ValidationMessageFor(model => model.ROUTE_ID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+      
+
+       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

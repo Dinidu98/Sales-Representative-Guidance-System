@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Sales_Rep.Models.InvoiceList>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Inoice No")
+        </th>
+        <th>
+            @Html.Label("Product Code")
+        </th>
+        <th>
+            @Html.Label("Product")
+        </th>
+        <th>
+            @Html.Label("Price")
+        </th>
+        <th>
+            @Html.Label("Discount")
+        </th>
+        <th>
+            @Html.Label("Sale Rep Name")
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InvoiceNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prdouct)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Discount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sell_Rep)
+        </td>
+        
+    </tr>
+}
+
+</table>
